@@ -1,0 +1,41 @@
+﻿@model SampleServer.Models.SampleData
+
+<p>
+
+</p>
+
+<table id="PersonTable" border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Persons name</th>
+            <th>View detail</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in @Model.People)
+        {
+            <tr>
+                <td>@person.PersonName </td>
+                <td> <a href="/home/viewdetail/@person.ID"> view </a> </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+
+<form id="dataForm" action="/home/FormData" method="post">
+    <label>Username</label> <input id="UserName" value="" name="UserName"><br />
+    <label>Gender</label> <select id="Gender" name="Gender"><option value="M">Male</option><option value="F">Female</option></select><br />
+    <button type="submit">Submit</button>
+</form>
+
+<p>
+
+</p>
+
+<br />
+
+
+
+
